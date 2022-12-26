@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        td {
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+            background-color: beige;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="images/supermario.jpg" alt="" id="image">
+        </div>
+        <div>
+            <br><input type="range" id="range" value="0" min="0" oninput="changeAudio(this)"><br><br>
+            <!--max here will be the duration of every song-->
+            <button onclick="play()">Play</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="stop()">Stop</button>
+            <button onclick="mute()"><i class="fa-solid fa-volume-xmark"></i></button><br><br>
+            Volume<input type="range" min="0" max="1" step="0.1" oninput="changeVolume(this)">
+            <!-- instead of this we can hold the input tag in variable in js and pass it -->
+        </div>
+    </div>
+    <table>
+        <tbody>
+            <tr onclick="loadSong(0)">
+                <td>Super Mario</td>
+            </tr>
+            <tr onclick="loadSong(1)">
+                <td>Helium</td>
+            </tr>
+            <tr onclick="loadSong(2)">
+                <td>Haga Mestkhbya</td>
+            </tr>
+            <tr onclick="loadSong(3)">
+                <td>Bad Guy</td>
+            </tr>
+        </tbody>
+    </table>
+    <audio controls src="music/Super Mario Bros (NES) Music - Overworld Theme.mp3" class="song"></audio>
+    <script src="mediaPlayer.js"></script>
+</body>
+
+</html>
